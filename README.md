@@ -1,2 +1,4 @@
 # apollo-ii
-This is a simple project for undestanding how works Gin.
+
+Apollo-II is a simple project for understanding how the Gin framework works in Go.
+

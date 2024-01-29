@@ -6,7 +6,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// Demos the binding of JSON data to a struct for validation
+// This code demonstrates how to bind incoming JSON data to a struct.
+// It uses the Gin framework's ShouldBindJSON function for this purpose.
+// Additionally, it validates the data based on the rules defined in the struct tags.
 type User struct {
 	Name string `json:"name" binding:"required,max=100,min=5"`
 	Age  int    `json:"age" binding:"required,max=18,min=5"`
@@ -32,5 +34,6 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{"name": user.Name, "age": user.Age})
 	})
 
-    r.Run() // listen and serve on 0.0.0.0:8080
+	// Listen and serve on
+    r.Run(":3000")
 }
